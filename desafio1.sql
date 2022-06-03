@@ -9,10 +9,10 @@ CREATE TABLE SpotifyClone.planos(
 
 CREATE TABLE SpotifyClone.usuarios(
 	usuario_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	usuario VARCHAR(50),
+	usuario VARCHAR(50) NOT NULL,
 	idade INT,
 	plano_id INT NOT NULL,
-	data_assinatura DATE,
+	data_assinatura DATE NOT NULL,
 	FOREIGN KEY(plano_id) REFERENCES planos(plano_id)
 ) ENGINE = InnoDB;
 
@@ -23,9 +23,9 @@ CREATE TABLE SpotifyClone.artistas(
 ) ENGINE = InnoDB;
 
 CREATE TABLE SpotifyClone.seguindo(
-	seguindo_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	usuario_id INT NOT NULL,
 	artista_id INT NOT NULL,
+    PRIMARY KEY(usuario_id, artista_id),
 	FOREIGN KEY(usuario_id) REFERENCES usuarios(usuario_id),
 	FOREIGN KEY(artista_id) REFERENCES artistas(artista_id)
 ) ENGINE = InnoDB;
@@ -47,10 +47,10 @@ CREATE TABLE SpotifyClone.cancoes(
 ) ENGINE = InnoDB;
 
 CREATE TABLE SpotifyClone.reproducoes(
-	reproducao_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     data_reproducao DATETIME,
     usuario_id INT NOT NULL,
     cancoes_id INT NOT NULL,
+    PRIMARY KEY(usuario_id, cancoes_id),
     FOREIGN KEY(usuario_id) REFERENCES usuarios(usuario_id),
     FOREIGN KEY(cancoes_id) REFERENCES cancoes(cancoes_id)
 ) ENGINE = InnoDB;
@@ -87,7 +87,6 @@ VALUES (1, 1),
        (1, 3),
        (2, 1),
        (2, 3),
-       (2, 2),
        (3, 2),
        (3, 1),
        (4, 4),
@@ -141,12 +140,11 @@ VALUES ("Soul For Us", 200, 1),
        ("History Of My Roses",222, 6),
 	   ("Without My Love", 111, 6),
        ("Walking And Game", 123, 6),
-       ( "Young And Father", 197, 6),
+       ("Young And Father", 197, 6),
        ("Finding My Traditions", 179, 7),
        ("Walking And Man", 119, 7),
        ("Hard And Time", 135, 7),
        ("Honey, I'm A Lone Wolf", 150, 7),
-       ("Finding My Traditions", 179, 7),
        ("She Thinks I Won't Stay Tonight", 166, 8),
        ("He Heard You're Bad For Me", 154, 8),
        ("He Hopes We Can't Stay", 210, 8),
