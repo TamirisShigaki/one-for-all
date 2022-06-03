@@ -41,7 +41,7 @@ CREATE TABLE SpotifyClone.albuns(
 CREATE TABLE SpotifyClone.cancoes(
 	cancoes_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	nome VARCHAR(120),
-    duracao__segundos INT NOT NULL,
+    duracao_segundos INT NOT NULL,
     album_id INT NOT NULL,
     FOREIGN KEY(album_id) REFERENCES albuns(album_id)
 ) ENGINE = InnoDB;
@@ -117,7 +117,7 @@ VALUES ('Envious', 1990, 1),
        ('No guarantees', 2015, 5),
        ('Apparatus', 2015, 6);
        
-INSERT INTO SpotifyClone.cancoes(nome, duracao__segundos, album_id)
+INSERT INTO SpotifyClone.cancoes(nome, duracao_segundos, album_id)
 VALUES ("Soul For Us", 200, 1),
        ("Reflections Of Magic", 163, 1),
        ("Dance With Her Own", 116, 1),
