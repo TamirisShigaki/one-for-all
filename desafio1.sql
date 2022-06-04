@@ -18,8 +18,7 @@ CREATE TABLE SpotifyClone.usuarios(
 
 CREATE TABLE SpotifyClone.artistas(
 	artista_id INT AUTO_INCREMENT PRIMARY KEY,
-	nome VARCHAR(30) NOT NULL,
-	sobrenome VARCHAR(30)
+	nome VARCHAR(50) NOT NULL
 ) ENGINE = InnoDB;
 
 CREATE TABLE SpotifyClone.seguindo(
@@ -73,13 +72,13 @@ VALUES ('Thati', 23, 1, '2019-10-20'),
        ('Angelina', 42, 2, '2018-04-29'),
        ('Paul', 46, 2, '2017-01-17');
        
-INSERT INTO SpotifyClone.artistas(nome, sobrenome)
-values ( 'Walter', 'Phoenix'),
-	   ('Peter', 'Strong'),
-	   ('Lance', 'Day'),
-	   ('Freedie', 'Shannon'),
-	   ('Tyler', 'Isle'),
-	   ('Fog', null);
+INSERT INTO SpotifyClone.artistas(nome)
+values ( 'Walter Phoenix'),
+	   ('Peter Strong'),
+	   ('Lance Day'),
+	   ('Freedie Shannon'),
+	   ('Tyler Isle'),
+	   ('Fog');
        
 INSERT INTO SpotifyClone.seguindo(usuario_id, artista_id)
 VALUES (1, 1),
