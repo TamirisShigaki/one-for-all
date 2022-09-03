@@ -1,4 +1,10 @@
-# 🚧 README em construção 🚧
+# 🚧 Readme em construção 🚧
+
+## 24 – Projeto One For All
+
+## Contexto
+
+Projeto pessoal desenvolvido na Trybe, onde utilizei comandos SQL para criar um banco de dados e para manipular e acessar seus dados.
 
 <!-- Olá, Tryber!
 
